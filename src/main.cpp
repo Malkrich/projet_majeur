@@ -1,18 +1,25 @@
 // std
 #include <iostream>
 #include <list>
-#include <vector>
 
 // extern
 #include "caractere.hpp"
-#include "utility.hpp"
+#include "phrase.hpp"
 
 int main()
 {
-    std::list<alphabet*> phrase;
-    phrase.assign(3, new A);
+    Phrase p = Phrase({new A});
 
-    display_string(phrase);
+    std::cout << p << std::endl;
+
+    int n = 3;
+
+    for(int i = 0; i < n; i++)
+    {
+        p.phrase() = p.iteration();
+    }
+
+    std::cout << p << std::endl;
 
     return 0;
 }
