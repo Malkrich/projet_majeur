@@ -21,6 +21,7 @@ public:
 
     std::vector<Alphabet*> const iteration() const;
 
+    Alphabet& operator()(int pos);
 };
 
 std::ostream& operator<<(std::ostream& s, Phrase& p);

@@ -21,11 +21,14 @@ std::vector<Alphabet*> const Phrase::iteration() const
     std::vector<Alphabet*> ret;
     for(auto it = chaine.begin(); it != chaine.end(); it++)
     {
-        ret.insert(ret.end(),(*it)->rule().begin(),(*it)->rule().end());
+        auto r = (*it)->rule();
+        ret.insert(ret.end(),r.begin(),r.end());
     }
 
     return ret;
 }
+
+Alphabet& Phrase::operator()(int pos){return *chaine[pos];}
 
 std::ostream& operator<<(std::ostream& s, Phrase& p)
 {
