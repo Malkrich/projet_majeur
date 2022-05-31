@@ -7,13 +7,13 @@ project=main
 all: ${project}
 
 # edition des liens
-${project}: main.o caractere.o utility.o
+${project}: main.o caractere.o phrase.o
 	${CXX} $^ -o ${project}
 
 # compilation
 main.o: main.cpp
 caractere.o: caractere.cpp caractere.hpp
-utility.o: utility.cpp utility.hpp
+phrase.o: phrase.cpp phrase.hpp
 
 clean:
 	rm -f *~  *.o ${project}
