@@ -4,43 +4,46 @@
 #define CARACTERE_HPP
 
 #include <iostream>
-#include <list>
+#include <vector>
+#include <ostream>
 
 class Caractere
-{
-public:
-    Caractere();
-};
-
-class Alphabet: public Caractere
 {
 private:
     char symbole;
 public:
+    Caractere(char char_param);
+    char get_char();
+};
+
+class Alphabet: public Caractere
+{
+public:
     Alphabet(char char_param);
-    virtual char get_char();
-    virtual std::list<Alphabet*> rule()=0;
+    virtual std::vector<Alphabet*> rule()=0;
 };
 
 class A: public Alphabet
 {
 public:
     A();
-    std::list<Alphabet*> rule();
+    std::vector<Alphabet*> rule();
 };
 
 class B: public Alphabet
 {
 public:
     B();
-    std::list<Alphabet*> rule();
+    std::vector<Alphabet*> rule();
 };
 
 class F: public Alphabet
 {
 public:
     F();
-    std::list<Alphabet*> rule();
+    std::vector<Alphabet*> rule();
 };
+
+std::ostream& operator<<(std::ostream& s, Caractere& c);
 
 #endif

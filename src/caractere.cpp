@@ -1,36 +1,51 @@
 #include "caractere.hpp"
 
-Caractere::Caractere()
+/*================CARACTERE========================*/
+Caractere::Caractere(char char_param):symbole(char_param)
     {}
 
-Alphabet::Alphabet(char char_param):symbole(char_param)
+char Caractere::get_char() {return symbole;}
+
+
+
+/*================ALPHABET========================*/
+Alphabet::Alphabet(char char_param):Caractere(char_param)
     {}
 
-char Alphabet::get_char(){return symbole;}
 
+
+/*================LETTRES========================*/
 A::A():Alphabet('A')
     {}
 
-std::list<Alphabet*> A::rule()
+
+
+std::vector<Alphabet*> A::rule()
 {
-    std::list<Alphabet*> ret({new A, new B});
+    std::vector<Alphabet*> ret({new A, new B});
     return ret;
 }
 
 B::B():Alphabet('B')
     {}
 
-std::list<Alphabet*> B::rule()
+std::vector<Alphabet*> B::rule()
 {
-    std::list<Alphabet*> ret({new A});
+    std::vector<Alphabet*> ret({new A});
     return ret;
 }
 
 F::F():Alphabet('F')
     {}
 
-std::list<Alphabet*> F::rule()
+std::vector<Alphabet*> F::rule()
 {
-    std::list<Alphabet*> ret({new F});
+    std::vector<Alphabet*> ret({new F});
     return ret;
+}
+
+std::ostream& operator<<(std::ostream& s, Caractere& c)
+{
+    s << c.get_char();
+    return s;
 }
