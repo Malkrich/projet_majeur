@@ -12,7 +12,6 @@ std::list<alphabet*> A::rule()
 {
     std::list<alphabet*> ret;
     ret.push_back(new A);
-    ret.push_back(new B);
     return ret;
 }
 

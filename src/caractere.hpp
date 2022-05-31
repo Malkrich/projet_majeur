@@ -19,7 +19,7 @@ private:
 public:
     alphabet(char char_param);
     virtual char get_char();
-    virtual std::list<alphabet*> rule();
+    virtual std::list<alphabet*> rule()=0;
 };
 
 class A: public alphabet
