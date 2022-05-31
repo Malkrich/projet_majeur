@@ -10,7 +10,9 @@
 int main()
 {
     std::list<alphabet*> phrase;
-    phrase.assign(1, new A);
+    phrase.assign(3, new A);
+
+    display_string(phrase);
 
     return 0;
 }
