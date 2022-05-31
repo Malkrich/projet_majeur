@@ -1,6 +1,6 @@
 #include "utility.hpp"
 
-void display_string(std::list<alphabet*>& l)
+void display_string(std::list<Alphabet*>& l)
 {
     for(auto it = l.begin(); it != l.end(); it++)
     {

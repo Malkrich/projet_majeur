@@ -4,4 +4,4 @@
 #include <list>
 #include "caractere.hpp"
 
-void display_string(std::list<alphabet*>& l);
+void display_string(std::list<Alphabet*>& l);
