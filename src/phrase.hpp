@@ -11,17 +11,17 @@
 class Phrase
 {
 private:
-    std::vector<Alphabet*> chaine;
+    std::vector<Caractere*> chaine;
 public:
     Phrase();
-    Phrase(std::vector<Alphabet*> v_param);
+    Phrase(std::vector<Caractere*> v_param);
 
-    std::vector<Alphabet*> const& phrase() const;
-    std::vector<Alphabet*>& phrase();
+    std::vector<Caractere*> const& phrase() const;
+    std::vector<Caractere*>& phrase();
 
-    std::vector<Alphabet*> const iteration() const;
+    std::vector<Caractere*> const iteration() const;
 
-    Alphabet& operator()(int pos);
+    Caractere& operator()(int pos);
 };
 
 std::ostream& operator<<(std::ostream& s, Phrase& p);
