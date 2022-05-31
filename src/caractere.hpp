@@ -33,12 +33,14 @@ class B: public alphabet
 {
 public:
     B();
+    std::list<alphabet*> rule();
 };
 
 class F: public alphabet
 {
 public:
     F();
+    std::list<alphabet*> rule();
 };
 
 #endif
