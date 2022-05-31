@@ -12,35 +12,59 @@ char Caractere::get_char() {return symbole;}
 Alphabet::Alphabet(char char_param):Caractere(char_param)
     {}
 
+bool Alphabet::hasRule() {return true;}
 
+/*================CONSTANTES========================*/
+
+Constante::Constante(char char_param):Caractere(char_param)
+    {}
+
+bool Constante::hasRule() {return false;}
+
+/*================CARACTERES CONSTANTES========================*/
+CrochetOpen::CrochetOpen():Constante('[')
+    {}
+
+std::vector<Caractere*> CrochetOpen::rule()
+{
+    std::vector<Caractere*> ret({new CrochetOpen});
+    return ret;
+}
+
+CrochetClose::CrochetClose():Constante(']')
+    {}
+
+std::vector<Caractere*> CrochetClose::rule()
+{
+    std::vector<Caractere*> ret({new CrochetClose});
+    return ret;
+}
 
 /*================LETTRES========================*/
 A::A():Alphabet('A')
     {}
 
-
-
-std::vector<Alphabet*> A::rule()
+std::vector<Caractere*> A::rule()
 {
-    std::vector<Alphabet*> ret({new A, new B});
+    std::vector<Caractere*> ret({new A, new B});
     return ret;
 }
 
 B::B():Alphabet('B')
     {}
 
-std::vector<Alphabet*> B::rule()
+std::vector<Caractere*> B::rule()
 {
-    std::vector<Alphabet*> ret({new A});
+    std::vector<Caractere*> ret({new A});
     return ret;
 }
 
 F::F():Alphabet('F')
     {}
 
-std::vector<Alphabet*> F::rule()
+std::vector<Caractere*> F::rule()
 {
-    std::vector<Alphabet*> ret({new F});
+    std::vector<Caractere*> ret({new F});
     return ret;
 }
 
