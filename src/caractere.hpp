@@ -6,41 +6,41 @@
 #include <iostream>
 #include <list>
 
-class caractere
+class Caractere
 {
 public:
-    caractere();
+    Caractere();
 };
 
-class alphabet: public caractere
+class Alphabet: public Caractere
 {
 private:
     char symbole;
 public:
-    alphabet(char char_param);
+    Alphabet(char char_param);
     virtual char get_char();
-    virtual std::list<alphabet*> rule()=0;
+    virtual std::list<Alphabet*> rule()=0;
 };
 
-class A: public alphabet
+class A: public Alphabet
 {
 public:
     A();
-    std::list<alphabet*> rule();
+    std::list<Alphabet*> rule();
 };
 
-class B: public alphabet
+class B: public Alphabet
 {
 public:
     B();
-    std::list<alphabet*> rule();
+    std::list<Alphabet*> rule();
 };
 
-class F: public alphabet
+class F: public Alphabet
 {
 public:
     F();
-    std::list<alphabet*> rule();
+    std::list<Alphabet*> rule();
 };
 
 #endif

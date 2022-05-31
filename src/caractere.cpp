@@ -1,40 +1,36 @@
 #include "caractere.hpp"
 
-caractere::caractere()
+Caractere::Caractere()
     {}
 
-alphabet::alphabet(char char_param):symbole(char_param)
+Alphabet::Alphabet(char char_param):symbole(char_param)
     {}
 
-char alphabet::get_char(){return symbole;}
+char Alphabet::get_char(){return symbole;}
 
-A::A():alphabet('A')
+A::A():Alphabet('A')
     {}
 
-std::list<alphabet*> A::rule()
+std::list<Alphabet*> A::rule()
 {
-    std::list<alphabet*> ret;
-    ret.push_back(new A);
-    ret.push_back(new B);
+    std::list<Alphabet*> ret({new A, new B});
     return ret;
 }
 
-B::B():alphabet('B')
+B::B():Alphabet('B')
     {}
 
-std::list<alphabet*> B::rule()
+std::list<Alphabet*> B::rule()
 {
-    std::list<alphabet*> ret;
-    ret.push_back(new A);
+    std::list<Alphabet*> ret({new A});
     return ret;
 }
 
-F::F():alphabet('F')
+F::F():Alphabet('F')
     {}
 
-std::list<alphabet*> F::rule()
+std::list<Alphabet*> F::rule()
 {
-    std::list<alphabet*> ret;
-    ret.push_back(new F);
+    std::list<Alphabet*> ret({new F});
     return ret;
 }
