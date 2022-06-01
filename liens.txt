@@ -1,5 +1,0 @@
-Liens utiles :
-Bases : https://hurna.io/fr/academy/algorithms/fractal_generator/lindenmayer_system.html
-
-arbres :
-https://gpfault.net/posts/generating-trees.txt.html
