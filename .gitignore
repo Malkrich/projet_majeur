@@ -1,4 +1,4 @@
 main
 
-# compiled files
+# compiled all .o files
 *.o
