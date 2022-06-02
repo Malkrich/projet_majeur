@@ -18,6 +18,8 @@ public:
 
     std::vector<Caractere*> const& phrase() const;
     std::vector<Caractere*>& phrase();
+    unsigned int size_phrase() const;
+    unsigned int size_phrase();
 
     std::vector<Caractere*> const iteration() const;
 

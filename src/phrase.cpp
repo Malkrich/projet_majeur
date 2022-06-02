@@ -16,6 +16,10 @@ std::vector<Caractere*>& Phrase::phrase()
     return chaine;
 }
 
+unsigned int Phrase::size_phrase() const {return chaine.size();}
+
+unsigned int Phrase::size_phrase() {return chaine.size();}
+
 std::vector<Caractere*> const Phrase::iteration() const
 {
     std::vector<Caractere*> ret;
