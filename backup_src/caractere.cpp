@@ -31,13 +31,79 @@ std::vector<Caractere*> CrochetOpen::rule()
     return ret;
 }
 
+void CrochetOpen::action(Turtle& tortue) {
+    tortue.sauvegarder_etat();
+}  
+
 CrochetClose::CrochetClose():Constante(']')
     {}
+
 
 std::vector<Caractere*> CrochetClose::rule()
 {
     std::vector<Caractere*> ret({new CrochetClose});
     return ret;
+}
+
+void CrochetClose::action(Turtle& tortue) {
+    tortue.telecharger_etat();
+}
+
+Plus::Plus():Constante('+')
+    {}
+
+
+std::vector<Caractere*> Plus::rule()
+{
+    std::vector<Caractere*> ret({new Plus});
+    return ret;
+}
+
+void Plus::action(Turtle& tortue) {
+    float theta = M_PI / 2;
+    tortue.rotation_theta(theta);
+}
+
+Moins::Moins():Constante('-')
+    {}
+
+std::vector<Caractere*> Moins::rule()
+{
+    std::vector<Caractere*> ret({new Moins});
+    return ret;
+}
+
+void Moins::action(Turtle& tortue) {
+    float theta = -1 * M_PI / 2;
+    tortue.rotation_theta(theta);
+}
+
+RollR::RollR():Constante('/')
+    {}
+
+std::vector<Caractere*> RollR::rule()
+{
+    std::vector<Caractere*> ret({new RollR});
+    return ret;
+}
+
+void RollR::action(Turtle& tortue) {
+    float phi = M_PI / 2;
+    tortue.rotation_phi(phi);
+}
+
+RollL::RollL():Constante('\\')
+    {}
+
+std::vector<Caractere*> RollL::rule()
+{
+    std::vector<Caractere*> ret({new RollL});
+    return ret;
+}
+
+void RollL::action(Turtle& tortue) {
+    float phi = -1 *  M_PI / 2;
+    tortue.rotation_phi(phi);
 }
 
 /*================LETTRES========================*/
@@ -50,8 +116,16 @@ std::vector<Caractere*> A::rule()
     return ret;
 }
 
+void A::action(Turtle& tortue) {
+    tortue.translation(1.0f);
+}
+
 B::B():Alphabet('B')
     {}
+
+void B::action(Turtle& tortue) {
+    tortue.translation(1.0f);
+}    
 
 std::vector<Caractere*> B::rule()
 {
@@ -61,6 +135,10 @@ std::vector<Caractere*> B::rule()
 
 F::F():Alphabet('F')
     {}
+
+void F::action(Turtle& tortue) {
+    tortue.translation(1.0f);
+}  
 
 std::vector<Caractere*> F::rule()
 {

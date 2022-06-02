@@ -1,4 +1,17 @@
 main
+..gitignore.swp
+.ninja_deps
+.ninja_log
+build.ninja
+CMakeCache.txt
+CMakeFiles
+CMakeLists.txt.user
+cmake_install.cmake
+build
+pgm
+pgm.cbp
+pgm_autogen
+
 
 # compiled all .o files
 *.o
