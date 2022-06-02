@@ -21,5 +21,7 @@ int main()
         std::cout << p << std::endl;
     }
 
+    std::cout << "size phrase : " << p.size_phrase() << std::endl;
+
     return 0;
 }
