@@ -21,6 +21,6 @@ make -C && build/pgm
 ## Choix du modèle de l'arbre
 
 Dans le dossier `__./src/external/projet/caractere.cpp__` se trouve plusieurs modèle.
-Choisir un des vecteurs et le décommenter.
+Choisir un des vecteurs et le décommenter.  
 
-## oui
+## oui  
