@@ -21,10 +21,12 @@ void Turtle::translation(float r) {
 
 void Turtle::rotation_theta(float angle) {
     etat.rotation_theta(angle);
+    etat.remplir_file_rotation({angle,0.0f});// new ugo
 }
 
 void Turtle::rotation_phi(float angle) {
     etat.rotation_phi(angle);
+    etat.remplir_file_rotation({0.0f,angle}); // new ugo
 }
 
 
@@ -34,6 +36,14 @@ Coord Turtle::get_etat() const {
 
 Coord& Turtle::get_etat() {
     return etat;
+}
+
+std::queue<cpe::vec2> Turtle::get_file_rotation() const {
+    return etat.get_file_rotation();
+}
+
+std::queue<cpe::vec2>& Turtle::get_file_rotation() {
+    return etat.get_file_rotation();
 }
 
 cpe::vec3 Turtle::get_pos() const
@@ -67,3 +77,8 @@ std::ostream& operator<<(std::ostream& s,Turtle const& t) {
     s<<"Etat de la tortue : "<<etat;
     return s;
 } 
+
+void Turtle::set_orientation(cpe::vec3& v_param)
+{
+    etat.orientation() = v_param;
+}
