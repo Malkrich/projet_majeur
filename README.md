@@ -18,5 +18,5 @@ make -C && build/pgm
 - __MAJ + Clic gauche + déplacement__ : translation de la caméra  
 
 ## Choix du modèle de l'arbre  
-Dans le dossier `__./src/external/projet/caractere.cpp__` se trouve plusieurs modèle.
+Dans le dossier `./src/external/projet/caractere.cpp` se trouve plusieurs modèle.
 Choisir un des vecteurs et le décommenter.  
