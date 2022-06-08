@@ -13,18 +13,24 @@ class Caractere
 {
 private:
     char symbole;
+    int incr_ordre;
 public:
-    Caractere(char char_param);
+    Caractere(char char_param, int ordre_param);
     char get_char();
     virtual std::vector<Caractere*> rule()=0;
     virtual void action(Turtle& tortue)=0;
     virtual bool is_adding_geometry() const=0;
+    int get_incr_ordre() const;
 };
 
 class Constante: public Caractere
 {
+protected:
+    float const angle_x;
+    float const angle_y;
+    float const angle_z;
 public:
-    Constante(char char_param);
+    Constante(char char_param, int odre_param);
     virtual std::vector<Caractere*> rule()=0;
     bool is_adding_geometry() const;
 };
@@ -107,6 +113,14 @@ class F: public Alphabet
 {
 public:
     F();
+    std::vector<Caractere*> rule();
+    void action(Turtle& tortue);
+};
+
+class L: public Alphabet
+{
+public:
+    L();
     std::vector<Caractere*> rule();
     void action(Turtle& tortue);
 };
