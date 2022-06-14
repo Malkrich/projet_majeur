@@ -160,13 +160,13 @@ std::vector<Caractere*> F::rule()
 //    std::vector<Caractere*> ret({new F, new CrochetOpen, new CrochetOpen, new RollR, new F, new CrochetClose, new F, new CrochetClose, new Plus, new RollL, new F,new Moins,new F});
 
     /*ARBRE 3D WIDE*/
-//    std::vector<Caractere*> ret({new F, new CrochetOpen, new Plus, new F, new L, new CrochetClose,
-//                                 new CrochetOpen, new RollL, new F, new L, new CrochetClose,
-//                                 new CrochetOpen, new Moins, new F, new L, new CrochetClose,
-//                                 new CrochetOpen, new RollR, new F, new L, new CrochetClose,
-//                                 new F});
+    std::vector<Caractere*> ret({new F, new CrochetOpen, new Plus, new F, new L, new CrochetClose,
+                                 new CrochetOpen, new RollL, new F, new L, new CrochetClose,
+                                 new CrochetOpen, new Moins, new F, new L, new CrochetClose,
+                                 new CrochetOpen, new RollR, new F, new L, new CrochetClose,
+                                 new F});
 
-    std::vector<Caractere*> ret({new F,new CrochetOpen,new RollL,new F,new CrochetClose,new Plus,new RollL,new F,new RollR,new CrochetOpen,new F,new CrochetOpen,new Plus, new Plus, new F,new L,new CrochetClose,new F,new L,new CrochetClose,new Moins,new Moins});
+//    std::vector<Caractere*> ret({new F,new CrochetOpen,new RollL,new F,new CrochetClose,new Plus,new RollL,new F,new RollR,new CrochetOpen,new F,new CrochetOpen,new Plus, new Plus, new F,new L,new CrochetClose,new F,new L,new CrochetClose,new Moins,new Moins});
 
     return ret;
 }

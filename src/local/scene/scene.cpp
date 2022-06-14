@@ -183,7 +183,7 @@ void scene::build_surface()
     p.phrase() = {new F};
 
     // iterations sur la phrase
-    for(unsigned int i = 0; i < 3; i++)
+    for(unsigned int i = 0; i < 2; i++)
     {
         p.phrase() = p.iteration();
     }
@@ -207,7 +207,7 @@ void scene::build_surface()
         ordre += p(i).get_incr_ordre();
         s_param = 1.0f/(ordre+1);
 
-        std::cout << "Progression : " << ((float)i*100/(float)p.size_phrase()) << "%" << std::endl;
+//        std::cout << "Progression : " << ((float)i*100/(float)p.size_phrase()) << "%" << std::endl;
         if(p(i).is_adding_geometry())
         {
             if(p(i).get_char() == 'F')
