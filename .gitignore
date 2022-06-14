@@ -3,6 +3,7 @@ main
 .ninja_deps
 .ninja_log
 build.ninja
+rules.ninja
 CMakeCache.txt
 CMakeFiles
 CMakeLists.txt.user
